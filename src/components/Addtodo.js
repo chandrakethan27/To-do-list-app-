@@ -6,6 +6,9 @@ function Addtodo({setTodolist, todolist}){
 
     const onFormSubmit = (todoObj)=>{
         setTodolist([...todolist, todoObj.newtodo])
+        const input = document.getElementById("todo");
+        input.value = ""
+
     }
     return(
         <div>
@@ -13,7 +16,7 @@ function Addtodo({setTodolist, todolist}){
             <form action="" className="w-75 mx-auto" onSubmit={handleSubmit(onFormSubmit)}>
                 <div className="mb-3">
                 <label htmlFor="todo">New Todo</label>
-                <input type="text" className="form-control" id="todo" {...register("newtodo")}/>
+                <input type="text" placeholder = "Enter" className="abc form-control" id="todo"{...register("newtodo")}/>
                 </div>
                 <button className="btn btn-info" type="submit">Add</button>
             </form>
